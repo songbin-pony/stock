@@ -1,0 +1,23 @@
+pip install django
+python -m django –version
+django-admin startproject stock
+python manage.py startapp sales
+python manage.py startapp common
+python manage.py createsuperuser
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    # 加入下面这行
+    'common.apps.CommonConfig',
+]
+python manage.py makemigrations common
+python manage.py migrate
+conda导出环境
+conda env export > F:/py37.yaml
+conda新建环境
+conda env create -f F:/py36.yaml

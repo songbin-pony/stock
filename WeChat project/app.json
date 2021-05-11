@@ -1,0 +1,40 @@
+{
+ "pages": [
+  "pages/index/index",
+  "pages/my/my",
+  "pages/buy/buy",
+  "pages/change/change",
+  "pages/confirmOrder/confirmOrder",
+  "pages/register/register",
+  "pages/paidorder/paidorder",
+  "pages/finishorder/finishorder",
+  "pages/chargeentry/chargeentry"
+
+ ],
+ "window": {
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "点餐系统",
+  "navigationBarTextStyle": "black"
+ },
+ "tabBar": {
+  "color": "#a9b7b7",
+  "selectedColor": "#11cd6e",
+  "borderStyle": "white",
+  "list": [
+   {
+    "selectedIconPath": "image/home_yes.png",
+    "iconPath": "image/home_no.png",
+    "pagePath": "pages/index/index",
+    "text": "首页"
+   },
+   {
+    "selectedIconPath": "image/me_yes.png",
+    "iconPath": "image/me_no.png",
+    "pagePath": "pages/my/my",
+    "text": "我的"
+   }
+  ]
+ },
+ "sitemapLocation": "sitemap.json"
+}

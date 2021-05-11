@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDao">
+    <select id="findAll" resultType="com.example.demo.entity.User">
+    select id,name,age,salary,email from t_user
+  </select>
+    <insert id="Save" parameterType="com.example.demo.entity.User">
+        insert into t_user (id,name,age,salary,email) values (#{id},#{name},#{age},#{salary},#{email})
+    </insert>
+    <delete id="Delete" parameterType="String">
+        delete from t_user where id=#{iddd}
+-- 在这里是id或者是iddd其他任意字符都可以只传过来了一个变量，体会与传入
+-- 对象的不同，当传入多个变量时需要在interface中先绑定，如 findNameOrEmail
+    </delete>
+    <update id="Update" parameterType="com.example.demo.entity.User">
+        update t_user set name=#{name},age=#{age},salary=#{salary},email=#{email} where id=#{id}
+    </update>
+    <!--处理模糊搜索-->
+    <select id="findNameOrEmail" resultType="com.example.demo.entity.User">
+        select id,name,age,salary,email from t_user
+        <where>
+            <if test="name!=''">
+                name like concat(#{name},'%')
+            </if>
+            <if test="email!=''">
+                or email like concat('%',#{email},'%')
+            </if>
+
+        </where>
+    </select>
+</mapper>

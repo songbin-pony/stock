@@ -1,0 +1,8 @@
+/* pages/login/login.wxss */
+.login_box{
+  padding: 30rpx;
+}
+.login_message{
+  text-align: center;
+  color: red;
+}

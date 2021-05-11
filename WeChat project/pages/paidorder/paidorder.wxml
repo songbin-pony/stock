@@ -1,0 +1,16 @@
+<!--pages/paidorder/paidorder.wxml-->
+<view>
+  <view wx:for="{{showList}}" wx:key="unique">
+    <view class="orderbox">
+      <view class="orderitem">
+        <view>下单时间:</view>
+        <view>{{item.ordertime}}</view>
+      </view>
+      <view class="orderitem">
+        <view>消费金额:</view>
+        <view>{{item.totalprice}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,9 @@
+/* pages/finishorder/finishorder.wxss */
+.orderitem{
+  display: flex;
+}
+.orderbox{
+  background-color: #ddd;
+  margin-top: 10px;
+  padding-left: 20px;
+}

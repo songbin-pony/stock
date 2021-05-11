@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.lwCommodityDao">
+    <select id="findAllonsellCommodity" resultType="com.example.demo.entity.lwCommodity">
+    select * from commodityitem where whetheronsell="true"
+  </select>
+    <select id="findAllselloutCommodity" resultType="com.example.demo.entity.lwCommodity">
+    select * from commodityitem where whetheronsell="false"
+  </select>
+    <insert id="saveCommodity" parameterType="com.example.demo.entity.lwCommodity">
+        insert into commodityitem (commodityid,cname,price,description,categoryid,categoryname,link,stock,whetheronsell) values (#{commodityid},#{cname},#{price},#{description},#{categoryid},#{categoryname},#{link},#{stock},#{whetheronsell})
+    </insert>
+    <delete id="deleteCommodity" parameterType="String">
+        delete from commodityitem where commodityid=#{commodityid}
+-- 在这里是id或者是iddd其他任意字符都可以只传过来了一个变量，体会与传入
+-- 对象的不同，当传入多个变量时需要在interface中先绑定，如 findNameOrEmail
+    </delete>
+    <update id="updateCommodity" parameterType="com.example.demo.entity.lwCommodity">
+        update commodityitem set commodityid=#{commodityid},cname=#{cname},price=#{price},description=#{description},categoryid=#{categoryid},categoryname=#{categoryname},link=#{link},stock=#{stock},whetheronsell=#{whetheronsell} where commodityid=#{commodityid}
+    </update>
+    <update id="tosellCommodity" parameterType="com.example.demo.entity.lwCommodity">
+        update commodityitem set whetheronsell="true" where commodityid=#{commodityid}
+    </update>
+    <update id="toselloutCommodity" parameterType="com.example.demo.entity.lwCommodity">
+        update commodityitem set whetheronsell="false" where commodityid=#{commodityid}
+    </update>
+    <select id="findCommodityById" resultType="com.example.demo.entity.lwCommodity">
+    select * from commodityitem where commodityid=#{commodityid}
+  </select>
+</mapper>

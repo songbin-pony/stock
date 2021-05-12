@@ -1,8 +1,0 @@
-/* pages/register/register.wxss */
-.register_box{
-  padding: 30rpx;
-}
-.register_message{
-  text-align: center;
-  color: red;
-}

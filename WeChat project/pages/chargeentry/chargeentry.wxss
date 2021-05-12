@@ -1,4 +1,0 @@
-/* pages/chargeentry/chargeentry.wxss */
-.topbar{
-  display: flex;
-}
